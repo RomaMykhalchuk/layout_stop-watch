@@ -4,38 +4,37 @@
   height: 140px;
   border-radius: 50%;
   margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   border: 5px solid coral; }
-  .clock::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 48%;
-    left: 49%;
-    width: 5px;
-    height: 5px;
-    background-color: #5e99a9;
-    border-radius: 50%;
-    z-index: 2; }
   .clock__hand {
     height: 46px;
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: left bottom; }
+    transform-origin: bottom; }
     .clock__hand--minute {
       width: 2px;
       border-radius: 2px;
+      position: absolute;
+      top: 20%;
       -webkit-animation: hand-rotation 3600s linear infinite;
               animation: hand-rotation 3600s linear infinite;
       background-color: #c45c5c; }
     .clock__hand--second {
       width: 1px;
+      position: absolute;
+      top: 20%;
+      border-radius: 1px;
       -webkit-animation: hand-rotation 60s linear infinite;
               animation: hand-rotation 60s linear infinite;
       background-color: #5e99a9; }
-  .clock__nums {
-    height: 100%; }
+  .clock__dot {
+    width: 5px;
+    height: 5px;
+    background-color: #5e99a9;
+    border-radius: 50%;
+    position: absolute;
+    top: 51%; }
 
 @-webkit-keyframes hand-rotation {
   100% {
@@ -46,24 +45,32 @@
     transform: rotateZ(360deg); } }
 
 .nums-list {
+  height: 100%;
+  width: 100%;
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-between; }
   .nums-list__item {
-    margin: 5px;
+    display: block;
     height: 20px;
     width: 20px;
-    text-align: center; }
-  .nums-list__item:first-child {
-    align-self: center; }
-  .nums-list__item:nth-child(3) {
-    align-self: flex-end;
-    position: relative;
-    right: 18px; }
-  .nums-list__item:nth-child(4) {
-    align-self: center; }
-  .nums-list__item:nth-child(2) {
-    position: relative;
-    left: 18px; }
+    text-align: center;
+    line-height: 20px; }
+    .nums-list__item:first-child {
+      align-self: center;
+      margin: 5px 5px 0 5px; }
+    .nums-list__item:last-child {
+      align-self: center;
+      margin: 5px 5px 0 5px; }
+    .nums-list__item:nth-child(3) {
+      align-self: flex-end; }
+    .nums-list__item:nth-child(2) {
+      position: relative;
+      left: 16px;
+      margin-top: 5px; }
+    .nums-list__item:nth-child(3) {
+      position: relative;
+      margin-bottom: 5px;
+      right: 16px; }
 
 html {
   font-family: "Fredoka One", cursive;

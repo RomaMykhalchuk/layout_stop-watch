@@ -4,38 +4,37 @@
   height: 140px;
   border-radius: 50%;
   margin: 100px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   border: 5px solid coral; }
-  .clock::before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 48%;
-    left: 49%;
-    width: 5px;
-    height: 5px;
-    background-color: #5e99a9;
-    border-radius: 50%;
-    z-index: 2; }
   .clock__hand {
     height: 46px;
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform-origin: left bottom; }
+    transform-origin: bottom; }
     .clock__hand--minute {
       width: 2px;
       border-radius: 2px;
+      position: absolute;
+      top: 20%;
       -webkit-animation: hand-rotation 3600s linear infinite;
               animation: hand-rotation 3600s linear infinite;
       background-color: #c45c5c; }
     .clock__hand--second {
       width: 1px;
+      position: absolute;
+      top: 20%;
+      border-radius: 1px;
       -webkit-animation: hand-rotation 60s linear infinite;
               animation: hand-rotation 60s linear infinite;
       background-color: #5e99a9; }
-  .clock__nums {
-    height: 100%; }
+  .clock__dot {
+    width: 5px;
+    height: 5px;
+    background-color: #5e99a9;
+    border-radius: 50%;
+    position: absolute;
+    top: 51%; }
 
 @-webkit-keyframes hand-rotation {
   100% {
